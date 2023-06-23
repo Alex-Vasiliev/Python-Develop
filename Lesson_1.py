@@ -1,6 +1,21 @@
+# create a game "Field of Wonders"
 import random
 
-word_list = ["apple", "banana", "orange", "kiwi", "pear"]
+word_list1 = ["apple", "orange", "cherry", "dog", "cat", "sunshine", "blubbery", "ice", "cold"]
+word_list2 = ["яблуко", "апельсин", "вишні"]
+word_list = []
+language = int(input("What language should the words be in? \n"
+                     "Якою мовою мають бути слова? \n"
+                     "1 - English\n"
+                     "2 - Українська\n"
+                     "\n"
+                     "Enter your choiceВведіть ваш вибір: "))
+
+if language == 1:
+    word_list = word_list1
+
+if language == 2:
+    word_list = word_list2
 
 
 def play_game(attempts):
@@ -8,43 +23,42 @@ def play_game(attempts):
     guessed_letters = []
     guessed_word = ["*"] * len(random_word)
 
-    print("Відгадайте слово!")
-    print(" ".join(guessed_word))
+    print("Guess the word!")
+    print("".join(guessed_word))
 
     for _ in range(attempts):
-        user_input = input("Ваша відповідь: ").lower()
+        input_letters = input("Your answer: ").lower()
 
-        if user_input == random_word:
-            print("Вітаю, ви вгадали слово!")
+        if input_letters == random_word:
+            print("Congratulations, you guessed the word!")
             return
 
-        if len(user_input) > 1:
-            print("Слово не правильне.")
+        elif len(input_letters) > 1:
+            print("he word is not correct.")
             continue
 
-        if user_input in guessed_letters:
-            print("Ви вже ввели цю літеру.")
+        elif input_letters in guessed_letters:
+            print("You have already entered this letter.")
             continue
 
-        guessed_letters.append(user_input)
-        correct_guess = False
+        guessed_letters.append(input_letters)
+        correct_gues = False
 
-        for i, letter in enumerate(random_word):
-            if user_input == letter:
-                guessed_word[i] = letter
-                correct_guess = True
+        for i, letters in enumerate(random_word):
+            if input_letters == letters:
+                guessed_word[i] = letters
+                correct_gues = True
 
-        print(" ".join(guessed_word))
+        print("".join(guessed_word))
 
         if "*" not in guessed_word:
-            print("Вітаю, ви вгадали слово!")
+            print("Congratulations, you guessed the word!")
             return
+        if not correct_gues:
+            print("There is no such letter.")
 
-        if not correct_guess:
-            print("Такої літери немає.")
-
-    print("Ви програли. Загадане слово було:", random_word)
+    print("You lost The required word was: ", random_word)
 
 
-number_of_attempts = int(input("Введіть кількість спроб: "))
+number_of_attempts = int(input("Enter the number of attempts: "))
 play_game(number_of_attempts)
