@@ -26,7 +26,7 @@ def play_game(attempts):
     print("Guess the word!")
     print("".join(guessed_word))
 
-    for _ in range(attempts):
+    while attempts > 0:
         input_letters = input("Your answer: ").lower()
 
         if input_letters == random_word:
@@ -56,6 +56,7 @@ def play_game(attempts):
             return
         if not correct_gues:
             print("There is no such letter.")
+            attempts -= 1
 
     print("You lost The required word was: ", random_word)
 
