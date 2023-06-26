@@ -15,3 +15,4 @@ def remove_line(file_name, rem_line):
 in_file_name = "New_file.txt"
 input_line_rem = input("Введіть текст який потрібно видалити: \n")
 remove_line(in_file_name, input_line_rem)
+
