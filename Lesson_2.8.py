@@ -20,4 +20,3 @@ def copy_file(txt_file_one, txt_file_two):
 name_file1 = "File-1_for_task_2.8.txt"
 name_file2 = "File-2_for_task_2.8.txt"
 copy_file(name_file1, name_file2)
-
