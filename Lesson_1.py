@@ -63,3 +63,4 @@ def play_game(attempts):
 
 number_of_attempts = int(input("Enter the number of attempts: "))
 play_game(number_of_attempts)
+
