@@ -8,23 +8,26 @@ class Rectangle:
         self.width = width
         self.lenght = lenght
 
-    def calculation(self):
+    def calculation_area(self):
         area = self.width * self.lenght
-        perimeter = 2*(self.width + self.lenght)
-        print(f"Area: {area}\nPerimeter: {perimeter}")
+        print(f"Area: {area}")
+
+    def calculation_perimeter(self):
+        perimeter = 2*(self.width+self.lenght)
+        print(f"Perimeter: {perimeter}")
 
 
 in_width = int(input("Enter pleas width: "))
 in_lenght = int(input("Enter pleas lenght: "))
 
 rect1 = Rectangle(5, 8)
-rect2 = Rectangle(10, 20)
-rect3 = Rectangle(in_width, in_lenght)
+rect2 = Rectangle(in_width, in_lenght)
 
-print("Rectangle 1")
-rect1.calculation()
-print("\nRectangle 2")
-rect2.calculation()
-print("\nRectangle 3")
-rect3.calculation()
-
+print("Rectangle 1\ncalculation area:")
+rect1.calculation_area()
+print("Rectangle 1\ncalculation perimeter:")
+rect1.calculation_perimeter()
+print("\nRectangle 2(input)\ncalculation area:")
+rect2.calculation_area()
+print("Rectangle 2(input)\ncalculation perimeter:")
+rect2.calculation_perimeter()
