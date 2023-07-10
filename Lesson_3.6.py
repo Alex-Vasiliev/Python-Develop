@@ -50,4 +50,3 @@ elif calculation_method == 2:
     finish.area_calculation()
 else:
     print("Error!")
-
