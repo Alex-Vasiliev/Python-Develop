@@ -7,23 +7,24 @@ class Person:
         self.__name = name
         self.__age = age
 
-    def __set_name(self):
+    def __set_name(self, name):
+        self.__name = name
+
+    def __set_age(self, age):
+        self.__age = age
+
+    def get_name(self):
         return self.__name
 
-    def __set_age(self):
+    def get_age(self):
         return self.__age
 
 
 person = Person("Alex", 21)
-
-# з помилкою
 try:
-    print(person.__set_name(), person.__set_age())
-except AttributeError:
-    print("Cannot access private method")
-
-# в обхід приватності
-try:
-    print(person._Person__set_name())
+    person._Person__set_name("John")
+    person._Person__set_age(25)
+    print(person.get_name()) # Виведе "John"
+    print(person.get_age()) # Виведе 25
 except AttributeError:
     print("Cannot access private method")
