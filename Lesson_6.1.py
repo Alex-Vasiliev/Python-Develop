@@ -4,27 +4,27 @@
 
 class Person:
     def __init__(self, name, age):
-        self.__name = name
-        self.__age = age
+        self._name = name
+        self._age = age
 
-    def __set_name(self, name):
-        self.__name = name
+    def _set_name(self, name):
+        self._name = name
 
-    def __set_age(self, age):
-        self.__age = age
+    def _set_age(self, age):
+        self._age = age
 
     def get_name(self):
-        return self.__name
+        return self._name
 
     def get_age(self):
-        return self.__age
+        return self._age
 
 
 person = Person("Alex", 21)
 try:
-    person._Person__set_name("John")
-    person._Person__set_age(25)
-    print(person.get_name()) # Виведе "John"
-    print(person.get_age()) # Виведе 25
+    person._set_name("John")
+    person._set_age(25)
+    print(person.get_name())
+    print(person.get_age())
 except AttributeError:
     print("Cannot access private method")
