@@ -8,16 +8,16 @@
 
 class Car:
     def __init__(self, make, model, year, mileage=0):
-        self._make = make
-        self._model = model
+        self.__make = make
+        self.__model = model
         self.year = year
         self.mileage = mileage
 
-    def _get_make(self):
-        return self._make
+    def get_make(self):
+        return self.__make
 
-    def _get_model(self):
-        return self._model
+    def get_model(self):
+        return self.__model
 
     def get_year(self):
         return self.year
@@ -34,8 +34,8 @@ class Car:
 
 
 car = Car("Toyota", "Rav-4", 2023)
-print("Make -", car._get_make())
-print("Model -", car._get_model())
+print("Make -", car.get_make())
+print("Model -", car.get_model())
 print("Year -", car.get_year())
 print("Mileage -", car.get_mileage())
 
