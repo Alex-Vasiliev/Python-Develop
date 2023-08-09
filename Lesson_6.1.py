@@ -4,26 +4,26 @@
 
 class Person:
     def __init__(self, name, age):
-        self._name = name
-        self._age = age
+        self.__name = name
+        self.__age = age
 
-    def _set_name(self, name):
-        self._name = name
+    def set_name(self, name):
+        self.__name = name
 
-    def _set_age(self, age):
-        self._age = age
+    def set_age(self, age):
+        self.__age = age
 
     def get_name(self):
-        return self._name
+        return self.__name
 
     def get_age(self):
-        return self._age
+        return self.__age
 
 
 person = Person("Alex", 21)
 try:
-    person._set_name("John")
-    person._set_age(25)
+    person.set_name("John")
+    person.set_age(25)
     print(person.get_name())
     print(person.get_age())
 except AttributeError:
